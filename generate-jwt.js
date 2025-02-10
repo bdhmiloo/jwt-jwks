@@ -19,10 +19,10 @@ const payload = process.argv[2];
 
 // CONFIG ////////////////////////////////
 const subject = process.env.SUBJECT;
-const apiKeyArn = process.env.API_KEY_ARN;
 const privateKeyArn = process.env.PRIVATE_KEY_ARN;
 const keyId = process.env.KEY_ID;
 const audience = process.env.AUDIENCE;
+const issuer = processs.env.ISSUER;
 
 const region = process.env.REGION;
 const alg = process.env.ALG;
@@ -70,14 +70,8 @@ const getJWT = async (iss, sub, kid, aud, hash, privateKey) => {
 
 const exec = async () => {
     const secretsClient = new secretsManager.SecretsManagerClient({region});
-    let data;
-
-    data = await secretsClient.send(new secretsManager.GetSecretValueCommand({
-        SecretId: apiKeyArn
-    }));
-    const issuer = data.SecretString;
-
-    data = await secretsClient.send(new secretsManager.GetSecretValueCommand({
+    
+    const data = await secretsClient.send(new secretsManager.GetSecretValueCommand({
         SecretId: privateKeyArn
     }));
     const privateKey = JSON.parse(data.SecretString);
