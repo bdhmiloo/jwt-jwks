@@ -1,0 +1,19 @@
+{
+  "name": "jwt-jwks",
+  "version": "1.0.0",
+  "description": "Generates a jwt based on a jwks secret from aws",
+  "main": "index.js",
+  "scripts": {
+    "generate-jwt": "node generate-jwt.js"
+  },
+  "author": "bdhmiloo",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.32.0",
+    "dotenv": "^16.4.7",
+    "jose": "^4.14.4",
+    "jsonwebtoken": "^9.0.0",
+    "node-clipboardy": "^1.0.3",
+    "uuid": "^9.0.0"
+  }
+}
