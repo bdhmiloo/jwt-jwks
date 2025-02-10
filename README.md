@@ -23,13 +23,14 @@ Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.co
     ```
 
 ## Configuration
-Create a `.env` file based on the `.env-template` file and fill in the required values:
+Create a `.env` file and fill in the required values:
 ```env
 SUBJECT=
 API_KEY_ARN=
 PRIVATE_KEY_ARN=
 KEY_ID=
 AUDIENCE=
+ISSUER=
 REGION=
 ALG=
 EXPIRES_IN=
